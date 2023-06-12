@@ -33,7 +33,6 @@ public class BookCommonServiceImpl implements CommonService<Book> {
     @Override
     public void update(Long id, Book book) {
 
-
         Optional<Book> optionalUser =bookRepository.findById(id);
         Book book1 = new Book();
         if(optionalUser.isPresent()){

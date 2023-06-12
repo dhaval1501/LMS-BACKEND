@@ -2,6 +2,8 @@ package com.lms.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "t_book")
 public class Book {
@@ -17,6 +19,10 @@ public class Book {
     private String availableQuantity;
     @Column(name = "t_quantity")
     private String totalQuantity;
+
+//    List<Student> studentList
+
+
 
     public Long getId() {
         return id;

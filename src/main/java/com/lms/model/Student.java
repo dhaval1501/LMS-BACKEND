@@ -3,6 +3,7 @@ package com.lms.model;
 import jakarta.persistence.*;
 
 import java.math.BigInteger;
+import java.util.List;
 
 
 @Entity
@@ -21,6 +22,7 @@ public class Student {
     private BigInteger number;
     @Column(name = "email")
     private String email;
+
 
     public Student(Long id, String firstName, String lastName, String address, BigInteger number, String email) {
         this.id = id;

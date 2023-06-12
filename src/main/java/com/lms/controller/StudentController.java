@@ -21,24 +21,28 @@ public class StudentController {
     }
 
     @PostMapping("/add")
+    @CrossOrigin( origins = "http://Localhost:4200")
     public void addStudent(@RequestBody Student student){
 
         studentCommonService.add(student);
     }
 
     @GetMapping("/all")
+    @CrossOrigin( origins = "http://Localhost:4200")
     public List<Student> getAllStudent(){
         List<Student> studentList = studentCommonService.getAll();
         return studentList;
     }
 
     @PutMapping("/update/{id}")
+    @CrossOrigin( origins = "http://Localhost:4200")
     public void updateStudent(@PathVariable Long id,@RequestBody Student student){
         studentCommonService.update(id,student);
 
     }
 
     @DeleteMapping("/delete/{id}")
+    @CrossOrigin( origins = "http://Localhost:4200")
     public void  deleteStudent(@PathVariable Long id){
         studentCommonService.delete(id);
     }
