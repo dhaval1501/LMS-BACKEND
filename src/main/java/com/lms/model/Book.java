@@ -22,8 +22,6 @@ public class Book {
 
 //    List<Student> studentList
 
-
-
     public Long getId() {
         return id;
     }

@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
+@CrossOrigin( origins = "http://Localhost:4200")
 public class StudentController {
 
     private CommonService<Student> studentCommonService;
@@ -21,10 +22,9 @@ public class StudentController {
     }
 
     @PostMapping("/add")
-    @CrossOrigin( origins = "http://Localhost:4200")
-    public void addStudent(@RequestBody Student student){
+    public Student addStudent(@RequestBody Student student){
 
-        studentCommonService.add(student);
+       return studentCommonService.add(student);
     }
 
     @GetMapping("/all")
@@ -36,8 +36,8 @@ public class StudentController {
 
     @PutMapping("/update/{id}")
     @CrossOrigin( origins = "http://Localhost:4200")
-    public void updateStudent(@PathVariable Long id,@RequestBody Student student){
-        studentCommonService.update(id,student);
+    public Student updateStudent(@PathVariable Long id,@RequestBody Student student){
+        return studentCommonService.update(id,student);
 
     }
 

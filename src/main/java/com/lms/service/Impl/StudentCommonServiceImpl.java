@@ -18,8 +18,9 @@ public class StudentCommonServiceImpl implements CommonService<Student> {
         this.studentRepository =studentRepository;
     }
     @Override
-    public void add(Student student) {
+    public Student add(Student student) {
         Student student1 = studentRepository.save(student);
+        return student1;
     }
 
     @Override
@@ -31,7 +32,7 @@ public class StudentCommonServiceImpl implements CommonService<Student> {
     }
 
     @Override
-    public void update(Long id, Student student) {
+    public Student update(Long id, Student student) {
 
         Optional<Student> optionalStudent =studentRepository.findById(id);
         Student student1 = new Student();
@@ -43,7 +44,7 @@ public class StudentCommonServiceImpl implements CommonService<Student> {
             student1.setEmail( student.getEmail());
             student1.setNumber( student.getNumber());
         }
-        studentRepository.save(student1);
+        return studentRepository.save(student1);
 
 
     }

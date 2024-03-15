@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/book")
+@CrossOrigin( origins = "http://Localhost:4200")
 public class BookController {
 
     private CommonService<Book> bookCommonService;
@@ -22,8 +23,8 @@ public class BookController {
 
     @CrossOrigin( origins = "http://Localhost:4200")
     @PostMapping("/add")
-        public void addBook(@RequestBody Book book){
-        bookCommonService.add(book);
+        public Book addBook(@RequestBody Book book){
+       return bookCommonService.add(book);
     }
 
     @GetMapping("/all")
@@ -35,13 +36,12 @@ public class BookController {
 
     @PutMapping("/update/{id}")
     @CrossOrigin( origins = "http://Localhost:4200")
-    public void updateBook(@PathVariable Long id,@RequestBody Book book){
-        bookCommonService.update(id,book);
+    public Book updateBook(@PathVariable Long id,@RequestBody Book book){
+      return  bookCommonService.update(id,book);
 
     }
 
     @DeleteMapping("/delete/{id}")
-    @CrossOrigin( origins = "http://Localhost:4200")
 
     public void  deleteBook(@PathVariable Long id){
         bookCommonService.delete(id);

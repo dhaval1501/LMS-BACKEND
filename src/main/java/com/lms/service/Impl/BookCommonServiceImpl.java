@@ -20,8 +20,9 @@ public class BookCommonServiceImpl implements CommonService<Book> {
 
     }
     @Override
-    public void add(Book book) {
+    public Book add(Book book) {
         Book book1 = bookRepository.save(book);
+        return book;
     }
 
     @Override
@@ -31,7 +32,7 @@ public class BookCommonServiceImpl implements CommonService<Book> {
     }
 
     @Override
-    public void update(Long id, Book book) {
+    public Book update(Long id, Book book) {
 
         Optional<Book> optionalUser =bookRepository.findById(id);
         Book book1 = new Book();
@@ -42,7 +43,7 @@ public class BookCommonServiceImpl implements CommonService<Book> {
             book1.setAvailableQuantity(book.getAvailableQuantity());
             book1.setTotalQuantity(book.getTotalQuantity());
         }
-        bookRepository.save(book1);
+       return bookRepository.save(book1);
     }
 
     @Override
