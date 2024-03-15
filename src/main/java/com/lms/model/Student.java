@@ -16,16 +16,14 @@ public class Student {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @JoinColumn(name = "address_id")
-    @OneToOne(cascade = CascadeType.ALL)
-    private Address address;
+    @Column(name = "address")
+    private String address;
     @Column(name = "number")
     private BigInteger number;
     @Column(name = "email")
     private String email;
 
-
-    public Student(Long id, String firstName, String lastName, Address address, BigInteger number, String email) {
+    public Student(Long id, String firstName, String lastName, String address, BigInteger number, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -60,11 +58,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public Address getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

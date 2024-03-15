@@ -12,6 +12,6 @@ public class Address {
     private String city;
     @Column(name = "pin_code")
     private int pinCode;
-    @OneToOne(mappedBy ="address")
-    private Student student;
+//    @OneToOne(mappedBy ="address")
+//    private Student student;
 }

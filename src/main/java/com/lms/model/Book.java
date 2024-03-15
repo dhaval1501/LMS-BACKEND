@@ -20,8 +20,6 @@ public class Book {
     @Column(name = "t_quantity")
     private String totalQuantity;
 
-//    List<Student> studentList
-
     public Long getId() {
         return id;
     }
