@@ -11,10 +11,18 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
+import com.lms.service.PythonInterface;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import py4j.GatewayServer;
 
 @Service
 public class BarcodeServiceImpl {
+
 
     public byte[] generateBarcode(String barcodeText, int width, int height) throws WriterException, IOException {
         // Set barcode parameters
