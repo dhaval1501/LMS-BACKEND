@@ -1,6 +1,7 @@
 package com.lms.dto;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import jakarta.persistence.OneToMany;
 
 public class StudentBook {
     private String stuName;

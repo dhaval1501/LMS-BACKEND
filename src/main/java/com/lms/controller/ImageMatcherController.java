@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/images")
@@ -48,5 +51,7 @@ public class ImageMatcherController {
         } catch (IOException e) {
             return ResponseEntity.status(500).body(("Error processing image: " + e.getMessage()).getBytes());
         }
+//        List<Object> list=new ArrayList<>();
+//        list.stream().max(Comparator.comparing(E));
     }
 }

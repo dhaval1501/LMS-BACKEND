@@ -15,10 +15,13 @@ import java.io.IOException;
 @Service
 public class ImageMatcherServiceImpl implements ImageMatcherService {
 
-    private final String pythonServerUrl = "http://localhost:5001/filter-images"; // Make sure this is correct
+        private final String pythonServerUrl = "http://localhost:5001/filter-images"; // Make sure this is correct
 
     @Override
     public byte[] filterImages(MultipartFile referenceImage) throws IOException {
+
+        int a;
+        
         // Convert MultipartFile to byte array
         byte[] referenceImageBytes = referenceImage.getBytes();
 

@@ -18,7 +18,7 @@ import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import py4j.GatewayServer;
+//import py4j.GatewayServer;
 
 @Service
 public class BarcodeServiceImpl {
